@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AACDemo</string>
+    <string name="coin_symbol">coin symbol</string>
+    <string name="bitcoin">Bitcoin</string>
+</resources>
