@@ -41,10 +41,12 @@ public class CurrencyRepository {
                 // TODO check for error etc.
                 // Update the database.The LiveData will automatically refresh so
                 // we don't need to do anything else here besides updating the database
-                Log.i(AppConstants.LOG_TYPE_INFO, coinPriceDto.getChartName());
-                appDatabase.currencyDao().save(coinPriceDto.getBpi().getUSD());
-                appDatabase.currencyDao().save(coinPriceDto.getBpi().getEUR());
-                appDatabase.currencyDao().save(coinPriceDto.getBpi().getGBP());
+                if (coinPriceDto != null) {
+                    Log.i(AppConstants.LOG_TYPE_INFO, coinPriceDto.getChartName());
+                    appDatabase.currencyDao().save(coinPriceDto.getBpi().getUSD());
+                    appDatabase.currencyDao().save(coinPriceDto.getBpi().getEUR());
+                    appDatabase.currencyDao().save(coinPriceDto.getBpi().getGBP());
+                }
             } catch (IOException e) {
                 Log.e(AppConstants.LOG_TYPE_ERROR, e.getMessage());
             }
